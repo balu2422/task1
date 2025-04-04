@@ -1,18 +1,18 @@
-resource "aws_iam_user" "aws_cli_user1" {
-  name = "aws_cli_user1"
+resource "aws_iam_user" "aws_cli_user134" {
+  name = "aws_cli_user134"
 }
 
 resource "aws_iam_user_policy_attachment" "admin_policy_attachment" {
-  user       = aws_iam_user.aws_cli_user1.name
+  user       = aws_iam_user.aws_cli_user134.name
   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
 }
 
 resource "aws_iam_access_key" "aws_cli_user1_key" {
-  user = aws_iam_user.aws_cli_user1.name
+  user = aws_iam_user.aws_cli_user134.name
 }
 
-resource "aws_iam_role" "ec2_s3_access1" {
-  name = "ec2-s3-access1"
+resource "aws_iam_role" "ec2_s3_access134" {
+  name = "ec2-s3-access134"
 
   assume_role_policy = <<EOF
 {
@@ -30,9 +30,9 @@ resource "aws_iam_role" "ec2_s3_access1" {
 EOF
 }
 
-resource "aws_iam_role_policy" "ec2_s3_access1_policy" {
-  name   = "ec2-s3-access1-policy"
-  role   = aws_iam_role.ec2_s3_access1.id
+resource "aws_iam_role_policy" "ec2_s3_access134_policy" {
+  name   = "ec2-s3-access134-policy"
+  role   = aws_iam_role.ec2_s3_access134.id
 
   policy = <<EOF
 {
